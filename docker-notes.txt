@@ -1,20 +1,19 @@
+++ Docker samples
+
 # criando container Postgres
-docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+  -- manter dados integros, relacionais => +bem definidos;
+  -- como: usuários (tanto prestadores como não prestadores de serviço)
+docker run --name databasebarber -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 
 # criando container MongoDB
+  -- manter dados de estado, não relacionais => +performáticos
+  -- como: notificações dos agendamentos
 docker run --name mongobarber -p 27017:27017 -d  -t mongo
 
-
-
-
-
-
-
-
-
-
-# tecnologias
-docker
+# criando container Redis
+  -- manter dados de background jobs / filas => chave-valor => extremamente +performáticos
+  -- como: background tasks de envio de e-mail para verificar falhas, definir prioridades, fazer novas tentativas, etc
+docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 
 # extensões usadas
 
@@ -29,6 +28,11 @@ docker
 -- Multer para tratar upload de arquivos
 -- Date-fns@next para manipular datas
 -- Mongoose para integração com MongoDB
+-- Nodemailer to send emails
+-- Express-handlebars -> template engine para reconhecer variaveis do node em HTML e configurar e-mails
+-- Nodemailer-express-handlebars para relacionar o Nodemailer com o handlebars
+-- Bee-queue para gerenciamento performático de filas e background jobs, como envio de e-mails
+
 ++ Dev Dependencies
 -- Sucrase-node para melhor sintaxe (import/export)
 -- Nodemon para aplicar mudanças no código automáticamente
