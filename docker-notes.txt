@@ -1,0 +1,40 @@
+# criando container Postgres
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+
+# criando container MongoDB
+docker run --name mongobarber -p 27017:27017 -d  -t mongo
+
+
+
+
+
+
+
+
+
+
+# tecnologias
+docker
+
+# extensões usadas
+
+++ Dependencies
+
+-- express
+-- Sequelize para integração com bancos relacionais - Postgres
+-- pg e pg-hstore
+-- bcryptjs para gerar o hash da senha do usuário
+-- jsonwebtoken para autenticação de usuário
+-- Yup para validação de integridade das entradas (schema-validation)
+-- Multer para tratar upload de arquivos
+-- Date-fns@next para manipular datas
+-- Mongoose para integração com MongoDB
+++ Dev Dependencies
+-- Sucrase-node para melhor sintaxe (import/export)
+-- Nodemon para aplicar mudanças no código automáticamente
+-- ESlint para padronização de código - AirBnb styleguide
+-- Prettier para outros padrões de código
+-- eslint-config-prettier para sincronizar verificações do Prettier com o ESlint
+-- Sequelize-cli para facilitar a criação de Migrations por linha de comando
+
+
