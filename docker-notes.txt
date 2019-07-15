@@ -32,6 +32,10 @@ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 -- Express-handlebars -> template engine para reconhecer variaveis do node em HTML e configurar e-mails
 -- Nodemailer-express-handlebars para relacionar o Nodemailer com o handlebars
 -- Bee-queue para gerenciamento performático de filas e background jobs, como envio de e-mails
+-- Sentry.io para gerenciamento de exceções
+-- Express-async-errors para permitir que o express detecte erros assíncronos e notifique o Sentry
+-- Youch para tratativa das mensagens de erro no servidor
+-- Dotenv para manipular variáveis de ambiente
 
 ++ Dev Dependencies
 -- Sucrase-node para melhor sintaxe (import/export)
