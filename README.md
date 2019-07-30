@@ -1,25 +1,26 @@
 # GoBarber
+  API de estudos para uma barbearia, não repare na bagunça :D
+  
+## ++ Docker samples
 
-# ++ Docker samples
-
-# criando container Postgres
+### criando container Postgres
   - manter dados integros, relacionais => +bem definidos;
   - como: usuários (tanto prestadores como não prestadores de serviço)
 docker run --name databasebarber -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 
-# criando container MongoDB
+### criando container MongoDB
   - manter dados de estado, não relacionais => +performáticos
   - como: notificações dos agendamentos
 docker run --name mongobarber -p 27017:27017 -d  -t mongo
 
-# criando container Redis
+### criando container Redis
   - manter dados de background jobs / filas => chave-valor => extremamente +performáticos
   - como: background tasks de envio de e-mail para verificar falhas, definir prioridades, fazer novas tentativas, etc
 docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 
-# extensões usadas
+## Extensões usadas
 
-# ++ Dependencies
+### Dependencies
 
 - express para ajudar no gerenciamento de rotas, middlewares e configurações do servidor
 - Sequelize para integração com bancos relacionais - no caso Postgres
@@ -39,7 +40,7 @@ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 - Youch para tratativa das mensagens de erro no servidor
 - Dotenv para manipular variáveis de ambiente
 
-# ++ Dev Dependencies
+### Dev Dependencies
 - Sucrase-node para alterar da sintaxe padrão (require/module.exports) para a moderna (import/export default)
 - Nodemon para aplicar mudanças no código reiniciando o servidor automáticamente
 - ESlint para padronização de código - neste caso usando AirBnb styleguide
