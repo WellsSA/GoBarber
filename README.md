@@ -20,7 +20,7 @@ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 
 ## Extensões usadas
 
-### Dependencies
+### ++ Dependencies
 
 - express para ajudar no gerenciamento de rotas, middlewares e configurações do servidor
 - Sequelize para integração com bancos relacionais - no caso Postgres
@@ -40,7 +40,7 @@ docker run --name redisbarber -p 6379:6379 -d -t redis:alpine
 - Youch para tratativa das mensagens de erro no servidor
 - Dotenv para manipular variáveis de ambiente
 
-### Dev Dependencies
+### ++ Dev Dependencies
 - Sucrase-node para alterar da sintaxe padrão (require/module.exports) para a moderna (import/export default)
 - Nodemon para aplicar mudanças no código reiniciando o servidor automáticamente
 - ESlint para padronização de código - neste caso usando AirBnb styleguide
