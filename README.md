@@ -1,21 +1,21 @@
 # GoBarber
   API de estudos para uma barbearia, não repare na bagunça :D
-  
+
 ## ++ Docker samples
 
 ### criando container Postgres
   - manter dados integros, relacionais => +bem definidos;
-  - como: usuários (tanto prestadores como não prestadores de serviço)  
+  - como: usuários (tanto prestadores como não prestadores de serviço)
 `docker run --name databasebarber -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres`
 
 ### criando container MongoDB
   - manter dados de estado, não relacionais => +performáticos
-  - como: notificações dos agendamentos   
+  - como: notificações dos agendamentos
 `docker run --name mongobarber -p 27017:27017 -d  -t mongo`
 
 ### criando container Redis
   - manter dados de background jobs / filas => chave-valor => extremamente +performáticos
-  - como: background tasks de envio de e-mail para verificar falhas, definir prioridades, fazer novas tentativas, etc   
+  - como: background tasks de envio de e-mail para verificar falhas, definir prioridades, fazer novas tentativas, etc
 `docker run --name redisbarber -p 6379:6379 -d -t redis:alpine`
 
 ## Extensões usadas
@@ -36,6 +36,7 @@
 - `Nodemailer-express-handlebars` para relacionar o Nodemailer com o handlebars
 - `Bee-queue` para gerenciamento performático de filas e background jobs, como envio de e-mails
 - `Sentry.io` para gerenciamento de exceções
+- `Cors` para controle de acesso de origens
 - `Express-async-errors` para permitir que o express detecte erros assíncronos e notifique o Sentry
 - `Youch` para tratativa das mensagens de erro no servidor
 - `Dotenv` para manipular variáveis de ambiente
